@@ -27,7 +27,7 @@ SECTIONS {
     } > ram
 
     .bss ALIGN(4K) : {
-        __bss_end = .;
+        __bss_start = .;
         *(.bss .bss.* COMMON)
         __bss_end = .;
     } > ram
