@@ -9,7 +9,7 @@ MEMORY {
 }
 
 SECTIONS {
-    . = 1M;
+    . = ORIGIN(rom);
     __kernel_start = .;
 
     .multiboot : {
@@ -32,13 +32,13 @@ SECTIONS {
         __data_start = .;
         *(.data .data.*)
         __data_end = .;
-    } > ram AT> rom
+    }
 
     .bss ALIGN(4K) : {
         __bss_start = .;
         *(.bss .bss.* COMMON)
         __bss_end = .;
-    } > ram
+    }
 
     __kernel_end = .;
 }

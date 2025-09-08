@@ -2,8 +2,8 @@ section .multiboot
     align 4
 multiboot_header:
     dd 0x1BADB002
-    dd 0x7
-    dd -(0x1BADB002 + 0x7)
+    dd 0x3
+    dd -(0x1BADB002 + 0x3)
 
 section .text
     global _start
